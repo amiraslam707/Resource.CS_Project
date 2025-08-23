@@ -138,7 +138,7 @@ document.head.appendChild(link);
         <div className="w-full text-white overflow-x-hidden" >
             {/* Background video */}
             <video
-                className="vidtop"
+                className="vidtop h-[100%] w-[100%] fixed object-cover z-[-1]"
                 autoPlay
                 muted
                 loop
@@ -152,74 +152,20 @@ document.head.appendChild(link);
 
             {/* Navbar */}
             <Navbar/>
-            {/* <div className="navbar">
-                <div className="logocont">
-                    <img
-                        onClick={() => (window.location.href = "index.html")}
-                        className="logo ancr"
-                        src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg"
-                        alt="logo"
-                    />
-                </div>
-                <div className="nav">
-                    <div className="navitem">
-                        <a className="ancr" href="toptracer page.html">
-                            TOPTRACER RANGE
-                        </a>
-                    </div>
-                    <div className="navitem">
-                        <a className="ancr" href="golf lessons page.html">
-                            GOLF LESSONS
-                        </a>
-                    </div>
-                    <div className="navitem">
-                        <a className="ancr" href="adventure golf page.html">
-                            ADVENTURE GOLF
-                        </a>
-                    </div>
-                    <div id="2ndlastnav" className="navitem">
-                        <a className="ancr" href="cafe page.html">
-                            CAFÉ
-                        </a>
-                    </div>
-                    <div id="lastnav" className="navitem">
-                        <a className="ancr" href="events page.html">
-                            EVENTS
-                        </a>
-                    </div>
-                </div>
-                <div className="navbtns">
-                    <button
-                        onClick={() =>
-                        (window.location.href =
-                            "https://bookings.sidcupfamilygolf.com/book?_gl=1*woqxqm*_gcl_au*MTk4NTc3MDAxOS4xNzI4NTQ1ODk1*_ga*MTcyMjAyNjI3LjE3Mjg1NDU4OTU.*_ga_M8BF8VTQ4P*MTcyODU0NTg5NS4xLjEuMTcyODU0NTg5NS42MC4wLjA.")
-                        }
-                        className="navbtn ancr"
-                    >
-                        BOOK RANGE
-                    </button>
-                    <button
-                        onClick={() => (window.location.href = "https://mrmulligan.com/sidcup")}
-                        className="navbtn ancr"
-                    >
-                        BOOK GOLF
-                    </button>
-                </div>
-            </div> */}
 
             {/* Main */}
-            <div id="main" className="overflow-hidden">
+            <div id="main" className="overflow-hidden relative bg-[rgba(0,0,0,0.466)] h-full w-full m-0 p-0">
                 {/* Page 1 */}
-                <div className="page1">
-                    <h1 id="tophead1" className="tophead">
+                <div className="page1 h-screen w-full relative flex justify-center items-center flex-col text-center z-[10]">
+                    <h1 id="tophead1" className="tophead font-[900] text-[7rem] m-0 text-white absolute top-[220px]">
                         LEARN.TRANSFORM.
                     </h1>
-                    <h1 id="tophead2" className="tophead">
+                    <h1 id="tophead2" className="tophead font-[900] text-[7rem] m-0 text-white absolute top-[330px]">
                         ACHIEVE.
                     </h1>
-                    {/* <h3 id="subtophead">WELCOME TO SIDCUP FAMILY GOLF!</h3> */}
-                    <p className="toppara">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque animi perspiciatis qui assumenda veritatis corrupti reiciendis possimus explicabo illum! Non harum itaque dolores saepe facilis!
+                    <h3 id="subtophead" className="text-[2rem] font-[900] absolute mt-[30px] text-white top-[440px]">YOUR ULTIMATE CS LEARNING HUB!</h3>
+                    <p className="toppara m-0 text-[1.5rem] text-white absolute top-[530px] w-[70%]">
+                      Discover curated learning resources, stay updated with tech events, and accelerate your Computer Science journey with our comprehensive platform designed for students.
                     </p>
                 </div>
 
@@ -235,18 +181,18 @@ document.head.appendChild(link);
                 <div className="page2">
                     <div id="scroller">
                         <div id="scroller-in">
-                            <h4>TOPTRACER RANGE</h4>
-                            <h4>GOLF LESSONS</h4>
-                            <h4>ADVENTURE GOLF</h4>
-                            <h4>COFFEE SHOP</h4>
-                            <h4>LEAGUES</h4>
+                            <h4>CAREER PATHS</h4>
+                            <h4>ROADMAPS</h4>
+                            <h4>RESOURCES</h4>
+                            <h4>TECH EVENTS</h4>
+                            {/* <h4>LEAGUES</h4> */}
                         </div>
                         <div id="scroller-in">
-                            <h4>TOPTRACER RANGE</h4>
-                            <h4>GOLF LESSONS</h4>
-                            <h4>ADVENTURE GOLF</h4>
-                            <h4>COFFEE SHOP</h4>
-                            <h4>LEAGUES</h4>
+                            <h4>CAREER PATHS</h4>
+                            <h4>ROADMAPS</h4>
+                            <h4>RESOURCES</h4>
+                            <h4>TECH EVENTS</h4>
+                            {/* <h4>LEAGUES</h4> */}
                         </div>
                     </div>
 

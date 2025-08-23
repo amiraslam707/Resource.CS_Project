@@ -46,7 +46,7 @@ import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from '../assets/logo.png'
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import {useClerk, UserButton, useUser} from '@clerk/clerk-react'
 
@@ -90,25 +90,17 @@ document.head.appendChild(link);
                         alt="logo"
                     />
                 { user ? (<div className="nav flex items-center gap-3 sm:gap-12">
-                    <div className="navitem">
-                        <a className="ancr" href="toptracer page.html">
-                            CAREER PATHS
-                        </a>       
+                    <div className="navitem flex justify-center items-center">
+                        <NavLink to={''} className='text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]'>CAREER PATHS</NavLink>   
                     </div>
-                    <div className="navitem">
-                        <a className="ancr" href="golf lessons page.html">
-                            ROADMAPS
-                        </a>
+                    <div className="navitem flex justify-center items-center">
+                        <NavLink to={''} className='text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]'>ROADMAPS</NavLink>   
                     </div>
-                    <div className="navitem">
-                        <a className="ancr" href="adventure golf page.html">
-                            RESOURCES
-                        </a>
+                    <div className="navitem flex justify-center items-center">
+                        <NavLink to={''} className='text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]'>RESOURCES</NavLink>   
                     </div>
-                    <div id="2ndlastnav" className="navitem">
-                        <a className="ancr" href="cafe page.html">
-                            TECH EVENTS
-                        </a>
+                    <div className="navitem flex justify-center items-center">
+                        <NavLink to={''} className='text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]'>TECH EVENTS</NavLink>   
                     </div>
                     {/* <div id="lastnav" className="navitem">
                         <a className="ancr" href="events page.html">
