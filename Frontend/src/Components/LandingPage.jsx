@@ -88,6 +88,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "./Navbar";
 import video from '../assets/140578-775389242_small.mp4'
+import tech1 from '../assets/tech1.png'
+import tech2 from '../assets/tech2.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -163,7 +165,7 @@ document.head.appendChild(link);
                     <h1 id="tophead2" className="tophead font-[900] text-[7rem] m-0 text-white absolute top-[330px]">
                         ACHIEVE.
                     </h1>
-                    <h3 id="subtophead" className="text-[2rem] font-[900] absolute mt-[30px] text-white top-[440px]">YOUR ULTIMATE CS LEARNING HUB!</h3>
+                    <h3 id="subtophead" className="text-[2rem] font-[900] absolute mt-[30px] text-white top-[440px]">YOUR ULTIMATE COMPUTER SCIENCE LEARNING HUB!</h3>
                     <p className="toppara m-0 text-[1.5rem] text-white absolute top-[530px] w-[70%]">
                       Discover curated learning resources, stay updated with tech events, and accelerate your Computer Science journey with our comprehensive platform designed for students.
                     </p>
@@ -200,24 +202,19 @@ document.head.appendChild(link);
                         <img
                             id="aboutpic1"
                             className="aboutpics"
-                            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1.jpg?strip=all&lossy=1&sharp=1&w=384&ssl=1"
+                            src={tech1}
                             alt="about 1"
                         />
                         <div className="aboutcontent">
                             <h2 className="abouthead">ABOUT US</h2>
                             <p className="abouttxt">
-                                Home to a 46-bay, multi-tier, floodlit driving range, powered by Toptracer Range technology.
-                                Complimented by a practice green and bunker, coffee shop and American Golf Store. There truly is
-                                something for everyone as we also boast two outdoor 18-hole dinosaur themed crazy golf courses.
-                            </p>
-                            <p className="abouttxt">
-                                Please note: we are a cashless venue. The range closes at 10pm with last balls at 9pm.
+                                We are dedicated to guiding students and professionals in exploring Computer Science career paths. Our platform provides structured roadmaps, curated resources, and updates on upcoming tech events to help learners stay ahead in the fast-evolving tech world. Whether you aim to become a software developer, data scientist, AI engineer, or cybersecurity expert, we make the journey clearer and easier. Our mission is to empower learners with the right knowledge, tools, and opportunities to build successful careers in technology.
                             </p>
                         </div>
                         <img
                             id="aboutpic2"
                             className="aboutpics"
-                            src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-2.jpg?strip=all&lossy=1&sharp=1&w=384&ssl=1"
+                            src={tech2}
                             alt="about 2"
                         />
                     </div>
