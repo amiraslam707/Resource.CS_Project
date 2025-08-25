@@ -30,8 +30,8 @@
 //     </button>
 //   </div>
 
-  {/* Career Paths Section */}
-  {/* <div className="relative z-10 bg-white py-16 px-6 md:px-20">
+{/* Career Paths Section */ }
+{/* <div className="relative z-10 bg-white py-16 px-6 md:px-20">
     <h2 className="text-3xl font-bold text-center mb-10">
       Popular Career Paths
     </h2>
@@ -90,6 +90,7 @@ import Navbar from "./Navbar";
 import video from '../assets/140578-775389242_small.mp4'
 import tech1 from '../assets/tech1.png'
 import tech2 from '../assets/tech2.jpg'
+import pic0 from '../assets/pic0.jpg'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,10 +105,10 @@ export default function LandingPage() {
 
     useEffect(() => {
 
-      const link = document.createElement("link");
-link.rel = "stylesheet";
-link.href ="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap";
-document.head.appendChild(link);
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap";
+        document.head.appendChild(link);
 
         // GSAP animations (ported from original)
         // gsap.to(".navbar", {
@@ -144,7 +145,7 @@ document.head.appendChild(link);
                 autoPlay
                 muted
                 loop
-                // poster="https://cdn.pixabay.com/photo/2020/04/25/12/14/circle-5090539_1280.jpg"
+            // poster="https://cdn.pixabay.com/photo/2020/04/25/12/14/circle-5090539_1280.jpg"
             >
                 <source
                     src={video}
@@ -153,7 +154,7 @@ document.head.appendChild(link);
             </video>
 
             {/* Navbar */}
-            <Navbar/>
+            <Navbar />
 
             {/* Main */}
             <div id="main" className="overflow-hidden relative bg-[rgba(0,0,0,0.466)] h-full w-full m-0 p-0">
@@ -167,7 +168,7 @@ document.head.appendChild(link);
                     </h1>
                     <h3 id="subtophead" className="text-[2rem] font-[900] absolute mt-[30px] text-white top-[440px]">YOUR ULTIMATE COMPUTER SCIENCE LEARNING HUB!</h3>
                     <p className="toppara m-0 text-[1.5rem] text-white absolute top-[530px] w-[70%]">
-                      Discover curated learning resources, stay updated with tech events, and accelerate your Computer Science journey with our comprehensive platform designed for students.
+                        Discover curated learning resources, stay updated with tech events, and accelerate your Computer Science journey with our comprehensive platform designed for students.
                     </p>
                 </div>
 
@@ -202,7 +203,7 @@ document.head.appendChild(link);
                         <img
                             id="aboutpic1"
                             className="aboutpics"
-                            src={tech1}
+                            src={pic0}
                             alt="about 1"
                         />
                         <div className="aboutcontent">
@@ -226,7 +227,7 @@ document.head.appendChild(link);
                             id="card1"
                         >
                             <div className="overlay">
-                                <h4>TOPTRACER RANGE</h4>
+                                <h4>CAREER PATHS</h4>
                                 <p>
                                     Our range delivers the same ball-tracking technology that traces the shots of the game’s best players
                                     on TV.Toptracer Range technology offers a fun, engaging, tech-driven experience that appeals to
@@ -240,7 +241,7 @@ document.head.appendChild(link);
                             id="card2"
                         >
                             <div className="overlay">
-                                <h4>ADVENTURE GOLF</h4>
+                                <h4>RESOURCES</h4>
                                 <p>Adventure awaits you!</p>
                                 <p>
                                     Become a Jurassic explorer as you delve into the land of the dinosaurs! Putt your way through
@@ -254,7 +255,7 @@ document.head.appendChild(link);
                             id="card3"
                         >
                             <div className="overlay">
-                                <h4>GOLF LESSONS</h4>
+                                <h4>COMMUNITY</h4>
                                 <p>
                                     Passionate about player development, whether you are new to the game or an aspiring pro, we offer
                                     both group and individual lessons tailored to you with the sole focus of helping you reach your goals.
@@ -264,21 +265,11 @@ document.head.appendChild(link);
                     </div>
 
                     <div id="green-div">
-                        <img
-                            className="green1"
-                            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
-                            alt="dots"
-                        />
                         <div className="txtcon">
-                            <h4>SIGN UP FOR SIDCUP NEWS AND SPECIAL</h4>
-                            <h4>OFFERS</h4>
-                            <h4>STRAIGHT TO YOUR INBOX</h4>
+                            <h4>WHY CHOOSE RESOURCE.CS ?</h4>
+                            {/* <h4>OFFERS</h4> */}
+                            {/* <h4>STRAIGHT TO YOUR INBOX</h4> */}
                         </div>
-                        <img
-                            className="green2"
-                            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-side.svg"
-                            alt="dots"
-                        />
                     </div>
 
                     <div id="food">
@@ -492,4 +483,3 @@ document.head.appendChild(link);
 
 
 
-  

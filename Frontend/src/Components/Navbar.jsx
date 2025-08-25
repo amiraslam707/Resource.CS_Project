@@ -83,12 +83,14 @@ document.head.appendChild(link);
 
   return (
     <div className="navbar fixed z-[99] flex justify-between items-center sm:px-14 px-2.5 w-full py-1 sm:py-2.5">
+        <div className="logocont h-[97px] w-[186px]">
                     <img
                         onClick={() => navigate('/')}
                         className="logo cursor-pointer hover:h-[94px] transition-all ease-in-out ancr h-24"
                         src={logo}
                         alt="logo"
-                    />
+                        />
+                        </div>
                 { user ? (<div className="nav flex items-center gap-3 sm:gap-12">
                     <div className="navitem flex justify-center items-center">
                         <NavLink to={''} className='text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]'>CAREER PATHS</NavLink>   
@@ -101,6 +103,9 @@ document.head.appendChild(link);
                     </div>
                     <div className="navitem flex justify-center items-center">
                         <NavLink to={''} className='text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]'>TECH EVENTS</NavLink>   
+                    </div>
+                                        <div className="navitem flex justify-center items-center">
+                        <NavLink to={''} className='text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]'>COMMUNITY</NavLink>   
                     </div>
                     {/* <div id="lastnav" className="navitem">
                         <a className="ancr" href="events page.html">
