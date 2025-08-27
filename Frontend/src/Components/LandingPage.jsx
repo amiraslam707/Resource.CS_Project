@@ -89,8 +89,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "./Navbar";
 import video from '../assets/140578-775389242_small.mp4'
 import tech1 from '../assets/tech1.png'
+import opt1 from '../assets/opt1.jpg'
+import opt2 from '../assets/opt2.jpg'
+import opt3 from '../assets/opt3.jpg'
 import tech2 from '../assets/tech2.jpg'
 import pic0 from '../assets/pic0.jpg'
+import WhyChoose from "./WhyChoose";
+import { NavLink, useNavigate } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -137,6 +142,8 @@ export default function LandingPage() {
 
     }, []);
 
+    const navigate = useNavigate()
+
     return (
         <div className="w-full text-white overflow-x-hidden" >
             {/* Background video */}
@@ -154,7 +161,7 @@ export default function LandingPage() {
             </video>
 
             {/* Navbar */}
-            <Navbar />
+            {/* <Navbar /> */}
 
             {/* Main */}
             <div id="main" className="overflow-hidden relative bg-[rgba(0,0,0,0.466)] h-full w-full m-0 p-0">
@@ -181,46 +188,46 @@ export default function LandingPage() {
                 </a> */}
 
                 {/* Page 2 */}
-                <div className="page2">
-                    <div id="scroller">
-                        <div id="scroller-in">
-                            <h4>CAREER PATHS</h4>
-                            <h4>ROADMAPS</h4>
-                            <h4>RESOURCES</h4>
-                            <h4>TECH EVENTS</h4>
+                <div className="page2 w-full z-[10]">
+                    <div id="scroller" className="whitespace-nowrap overflow-x-auto overflow-y-hidden relative z-[10]">
+                        <div id="scroller-in" className="inline-block whitespace-nowrap">
+                            <h4 className="inline-block text-[120px] font-[900] mt-0 mb-[30px] mr-[100px]">CAREER PATHS</h4>
+                            <h4 className="inline-block text-[120px] font-[900] mt-0 mb-[30px] mr-[100px]">ROADMAPS</h4>
+                            <h4 className="inline-block text-[120px] font-[900] mt-0 mb-[30px] mr-[100px]">RESOURCES</h4>
+                            <h4 className="inline-block text-[120px] font-[900] mt-0 mb-[30px] mr-[100px]">TECH EVENTS</h4>
                             {/* <h4>LEAGUES</h4> */}
                         </div>
-                        <div id="scroller-in">
-                            <h4>CAREER PATHS</h4>
-                            <h4>ROADMAPS</h4>
-                            <h4>RESOURCES</h4>
-                            <h4>TECH EVENTS</h4>
+                        <div id="scroller-in" className="inline-block whitespace-nowrap">
+                            <h4 className="inline-block text-[120px] font-[900] mt-0 mb-[30px] mr-[100px]">CAREER PATHS</h4>
+                            <h4 className="inline-block text-[120px] font-[900] mt-0 mb-[30px] mr-[100px]">ROADMAPS</h4>
+                            <h4 className="inline-block text-[120px] font-[900] mt-0 mb-[30px] mr-[100px]">RESOURCES</h4>
+                            <h4 className="inline-block text-[120px] font-[900] mt-0 mb-[30px] mr-[100px]">TECH EVENTS</h4>
                             {/* <h4>LEAGUES</h4> */}
                         </div>
                     </div>
 
-                    <div id="about">
+                    <div id="about" className="flex w-full relative h-[420px] top-[30px] z-[12]">
                         <img
                             id="aboutpic1"
-                            className="aboutpics"
+                            className="aboutpics h-[260px] w-[230px] rounded-[10px] object-cover my-[75px] mx-10 z-[15]]"
                             src={pic0}
                             alt="about 1"
                         />
-                        <div className="aboutcontent">
-                            <h2 className="abouthead">ABOUT US</h2>
-                            <p className="abouttxt">
+                        <div className="aboutcontent text-center">
+                            <h2 className="abouthead mt-0 text-[3rem] font-[900]">ABOUT US</h2>
+                            <p className="abouttxt text-[1.5rem] my-[45px] mx-[90px]">
                                 We are dedicated to guiding students and professionals in exploring Computer Science career paths. Our platform provides structured roadmaps, curated resources, and updates on upcoming tech events to help learners stay ahead in the fast-evolving tech world. Whether you aim to become a software developer, data scientist, AI engineer, or cybersecurity expert, we make the journey clearer and easier. Our mission is to empower learners with the right knowledge, tools, and opportunities to build successful careers in technology.
                             </p>
                         </div>
                         <img
                             id="aboutpic2"
-                            className="aboutpics"
+                            className="aboutpics h-[260px] w-[230px] rounded-[10px] object-cover my-[75px] mx-10 z-[15]]"
                             src={tech2}
                             alt="about 2"
                         />
                     </div>
 
-                    <div className="cardscont">
+                    <div className="cardscont bg-black h-[90vh] flex items-center justify-evenly mt-[90px]">
                         <div
                             onClick={() => (window.location.href = "toptracer page.html")}
                             className="cards ancr"
@@ -229,9 +236,7 @@ export default function LandingPage() {
                             <div className="overlay">
                                 <h4>CAREER PATHS</h4>
                                 <p>
-                                    Our range delivers the same ball-tracking technology that traces the shots of the game’s best players
-                                    on TV.Toptracer Range technology offers a fun, engaging, tech-driven experience that appeals to
-                                    seasoned players, range rivals, friends, family members, and even first-time golfers.
+                                    Explore diverse career paths in Computer Science, from software development and data science to cybersecurity, AI, and cloud computing. Each path offers unique opportunities, skills, and growth potential. Whether you’re starting as a beginner or planning your next move, our detailed guides and resources help you understand roles, required skills, and industry demand.
                                 </p>
                             </div>
                         </div>
@@ -242,10 +247,8 @@ export default function LandingPage() {
                         >
                             <div className="overlay">
                                 <h4>RESOURCES</h4>
-                                <p>Adventure awaits you!</p>
                                 <p>
-                                    Become a Jurassic explorer as you delve into the land of the dinosaurs! Putt your way through
-                                    prehistoric landscape, cascading waterfalls and meet some dinosaur friends along the way.
+                                    Access a wide range of curated resources to boost your Computer Science journey. From beginner-friendly tutorials and coding challenges to advanced books, tools, and frameworks, we’ve got everything to support your learning. Stay updated with the latest technologies and explore practical guides, open-source projects, and community platforms.
                                 </p>
                             </div>
                         </div>
@@ -257,22 +260,22 @@ export default function LandingPage() {
                             <div className="overlay">
                                 <h4>COMMUNITY</h4>
                                 <p>
-                                    Passionate about player development, whether you are new to the game or an aspiring pro, we offer
-                                    both group and individual lessons tailored to you with the sole focus of helping you reach your goals.
+                                    Join a vibrant community of learners, developers, and tech enthusiasts passionate about Computer Science. Connect, collaborate, and share knowledge through discussions, forums, and events. Our community is a space where you can ask questions, get guidance, and support others in their learning journey. From beginners to professionals, everyone is welcome to exchange ideas, explore opportunities, and grow together.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="green-div">
-                        <div className="txtcon">
-                            <h4>WHY CHOOSE RESOURCE.CS ?</h4>
+                    {/* <div id="green-div"> */}
+                        <WhyChoose/>
+                        {/* <div className="txtcon"> */}
+                            {/* <h4>WHY CHOOSE RESOURCE.CS ?</h4> */}
                             {/* <h4>OFFERS</h4> */}
                             {/* <h4>STRAIGHT TO YOUR INBOX</h4> */}
-                        </div>
-                    </div>
+                        {/* </div> */}
+                    {/* </div> */}
 
-                    <div id="food">
+                    {/* <div id="food">
                         <div className="foodpicscon">
                             <img
                                 className="foodpic"
@@ -319,13 +322,13 @@ export default function LandingPage() {
                                 COFFEE SHOP
                             </button>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className="insta">
+                    {/* <div className="insta">
                         <div className="insta-imgs">
                             <marquee>
                                 {/* Image list duplicated to match original behavior */}
-                                {[
+                                {/* {[
                                     "447781550_991790659220634_5577119039868959224_nlow.jpg",
                                     "1030727008770120_6567554558293281910_nlow.jpg",
                                     "446478269139605_3616962284735382682_nlow.jpg",
@@ -361,12 +364,12 @@ export default function LandingPage() {
                             </svg>
                             <span>FOLLOW US ON INSTAGRAM</span>
                         </a>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Page 3 */}
                 <div id="page3">
-                    <div className="coloncont">
+                    {/* <div className="coloncont">
                         <img
                             src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
                             alt="qleft"
@@ -388,93 +391,54 @@ export default function LandingPage() {
                             alt="qright"
                             id="colon2"
                         />
-                    </div>
+                    </div> */}
 
                     <div className="waitingcont">
                         <div className="question">WHAT ARE YOU WAITING FOR?</div>
                         <div className="optionscont">
                             <div
-                                onClick={() => (window.location.href = "toptracer page.html")}
+                                onClick={() => navigate('')}
                                 id="option1"
                                 className="options ancr"
                             >
-                                TOPTRACER RANGE
+                                CAREER PATHS
                             </div>
                             <div
-                                onClick={() => (window.location.href = "golf lessons page.html")}
+                                onClick={() => navigate('')}
                                 id="option2"
                                 className="options ancr"
                             >
-                                GOLF LESSONS
+                                ROADMAPS
                             </div>
                             <div
-                                onClick={() => (window.location.href = "adventure golf page.html")}
+                                onClick={() => navigate('')}
                                 id="option3"
                                 className="options ancr"
                             >
-                                ADVENTURE GOLF
+                                TECH EVENTS
                             </div>
                         </div>
                     </div>
 
-                    <div className="lastgreencont">
-                        <img
-                            className="lastdots"
-                            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-white.svg"
-                            alt="dots"
-                        />
-                        <div className="lastgreencon">
-                            <div className="first">
-                                <a href="index.html">
-                                    <img
-                                        className="logo ancr"
-                                        src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/logo-white.svg"
-                                        alt="logo"
-                                    />
-                                </a>
-                            </div>
-                            <div className="sec">
-                                <a href="toptracer page.html" className="lastlinks ancr">
-                                    TOPTRACER RANGE
-                                </a>
-                                <a href="adventure golf page.html" className="lastlinks ancr">
-                                    CRAZY GOLF
-                                </a>
-                                <a href="cafe page.html" className="lastlinks ancr">
-                                    Café
-                                </a>
-                            </div>
-                            <div className="third">
-                                <a href="events page.html" className="lastlinks ancr">
-                                    events
-                                </a>
-                                <a href="golf lessons page.html" className="lastlinks ancr">
-                                    golf lessons
-                                </a>
-                                <a href="contact page.html" className="lastlinks ancr">
-                                    contact us
-                                </a>
-                            </div>
-                            <div className="fourth">
-                                <div className="lines">A20, SIDCUP BYPASS</div>
-                                <div className="lines">CHISLEHURST</div>
-                                <div className="lines">KENT</div>
-                                <div className="lines">BR7 6RP</div>
-                                <div className="lines">TEL: 0208 309 0181</div>
-                                <div
-                                    id="maplink"
-                                    className="lines ancr"
-                                    onClick={() => (window.location.href = "https://goo.gl/maps/vp1uc8UaWRfrbrca9")}
-                                >
-                                    GET DIRECTIONS
-                                </div>
-                            </div>
-                        </div>
-                        <div className="lastline">
-                            Copyright © 2023 Adventure Leisure Ltd. All rights reserved. | Privacy Policy | Terms And Conditions |
-                            Gender Pay Gap
-                        </div>
-                    </div>
+                     <section className="py-28">
+      <div className="max-w-4xl mx-auto text-center px-4">
+        <h2 className="text-4xl md:text-5xl font-[900] leading-16 text-white mb-4">
+          Ready to Supercharge Your Learning?
+        </h2>
+        <p className="text-lg md:text-xl text-white/90 font-medium mb-8">
+          Join thousands of Computer Science students who trust <span className="font-bold text-[#155dfc]">Resource.CS </span> 
+          to level up their skills, stay updated, and unlock new career opportunities.
+        </p>
+        {/* <div className="flex justify-center gap-4"> */}
+          <button className="bg-white text-[#155dfc] font-[600] px-6 py-3 rounded-lg hover:bg-gray-300 transition duration-200 cursor-pointer">
+            Join Free Today
+          </button>
+          {/* <button className="border border-white text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition">
+            Watch Demo
+          </button> */}
+        {/* </div> */}
+      </div>
+    </section>
                 </div>
             </div>
         </div >
