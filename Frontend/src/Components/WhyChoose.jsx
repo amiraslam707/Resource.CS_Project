@@ -38,7 +38,7 @@ export default function WhyChoose() {
   ];
 
   return (
-    <section className="bg-[linear-gradient(to_left_bottom,#d000ff,#00d4ff)] py-10">
+    <section className="bg-[linear-gradient(to_left_bottom,#0051ff,#00d4ff)] py-10">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-[3rem] font-bold text-black mb-1">
           Why Choose Resource.CS?
