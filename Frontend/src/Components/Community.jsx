@@ -1,164 +1,153 @@
-import { useState } from 'react'
-
-const services = [
-  {
-    id: 1,
-    title: "Web Development",
-    description: "Build responsive and modern websites with the latest web technologies for optimal performance and user experience.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 2,
-    title: "Mobile App Development",
-    description: "Transform your ideas into powerful mobile applications for iOS and Android platforms with cutting-edge features.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 3,
-    title: "Product Development",
-    description: "From concept to launch, we help you build innovative products that meet market demands and user expectations.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 4,
-    title: "Managed IT Services",
-    description: "Comprehensive IT support and management services to keep your business running smoothly and securely.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 5,
-    title: "Generative AI Services",
-    description: "Leverage the power of AI to automate processes, enhance creativity, and drive innovation in your business.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 6,
-    title: "Data Science",
-    description: "Unlock insights from your data with advanced analytics, machine learning, and predictive modeling solutions.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 7,
-    title: "AR/VR",
-    description: "Create immersive augmented and virtual reality experiences for training, entertainment, and business applications.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 8,
-    title: "Cloud Computing",
-    description: "Optimize your infrastructure with scalable cloud solutions tailored to your business needs and growth.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 9,
-    title: "DevOps",
-    description: "Streamline your development and deployment processes with automated CI/CD pipelines and infrastructure management.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 10,
-    title: "Digital Enterprise Solution",
-    description: "End-to-end digital transformation solutions designed to modernize your business operations and drive growth.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 11,
-    title: "AI/ML",
-    description: "Harness the power of artificial intelligence and machine learning to automate processes and gain insights.",
-    image: "../assets/tech1.png"
-  },
-  {
-    id: 12,
-    title: "Business Process Automation",
-    description: "Automate repetitive tasks and optimize workflows to increase efficiency and reduce operational costs.",
-    image: "../assets/tech1.png"
-  }
-]
+import React, { useState } from "react";
+import { Pencil, Trash2, ImagePlus } from "lucide-react";
 
 export default function Community() {
-  const [hoveredCard, setHoveredCard] = useState(null)
+  const [posts, setPosts] = useState([]);
+  const [text, setText] = useState("");
+  const [image, setImage] = useState(null);
+  const [editId, setEditId] = useState(null);
+
+  const handlePost = () => {
+    if (!text.trim()) return alert("Text field cannot be empty!");
+    if (editId) {
+      setPosts(
+        posts.map((p) =>
+          p.id === editId ? { ...p, text, image } : p
+        )
+      );
+      setEditId(null);
+    } else {
+      const newPost = {
+        id: Date.now(),
+        text,
+        image,
+        date: new Date().toLocaleString(),
+      };
+      setPosts([newPost, ...posts]);
+    }
+    setText("");
+    setImage(null);
+  };
+
+  const handleEdit = (id) => {
+    const post = posts.find((p) => p.id === id);
+    setText(post.text);
+    setImage(post.image);
+    setEditId(id);
+  };
+
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this post?")) {
+      setPosts(posts.filter((p) => p.id !== id));
+    }
+  };
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) setImage(URL.createObjectURL(file));
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-16 px-4">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Resource Linked Technologies
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our diverse range of services empowers businesses across industries to thrive in the digital landscape. 
-            Whether you're a startup or an enterprise, we provide comprehensive solutions to help you succeed.
-          </p>
-        </div>
+    <div className="min-h-screen bg-black text-white px-4 py-20">
+      <div className="max-w-3xl mx-auto space-y-8">
+        {/* Heading */}
+        <h1 className="text-4xl font-bold text-center mb-10 mt-20">
+          <span className="text-[#155dfc]">Community </span>Feed
+        </h1>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className="relative group cursor-pointer"
-              onMouseEnter={() => setHoveredCard(service.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              {/* Card Container */}
-              <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 h-full">
-                {/* Animated Border */}
-                <div className="absolute inset-0 rounded-lg">
-                  {/* Initial partial border (left side) */}
-                  <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-red-500 to-orange-500 transition-all duration-300 ease-in-out"></div>
-                  
-                  {/* Animated complete border on hover */}
-                  <div className={`absolute inset-0 rounded-lg transition-all duration-500 ease-in-out ${
-                    hoveredCard === service.id 
-                      ? 'border-2 border-red-500 opacity-100' 
-                      : 'border-2 border-transparent opacity-0'
-                  }`}></div>
-                </div>
-
-                {/* Card Content */}
-                <div className="relative z-10 p-6">
-                  {/* Service Image */}
-                  <div className="mb-4 overflow-hidden rounded-lg">
-                    <img
-                      src={service.image || "/placeholder.svg"}
-                      alt={service.title}
-                      className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
-
-                  {/* Service Title */}
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-red-600 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-
-                  {/* Service Description */}
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  {/* Hover Effect Arrow */}
-                  <div className={`mt-4 flex items-center text-red-500 font-medium transition-all duration-300 ${
-                    hoveredCard === service.id ? 'opacity-100 translate-x-2' : 'opacity-0 translate-x-0'
-                  }`}>
-                    <span className="text-sm">Learn More</span>
-                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
+        {/* Create Post */}
+        <div className="bg-gray-900 rounded-2xl p-5 shadow-lg border border-gray-800">
+          <textarea
+            placeholder="What's on your mind?"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+            className="w-full bg-gray-800 rounded-xl p-3 text-white resize-none focus:outline-none"
+            rows={4}
+          />
+          {image && (
+            <div className="relative mt-3">
+              <img
+                src={image}
+                alt="preview"
+                className="rounded-xl max-h-60 object-cover w-full"
+              />
+              <button
+                onClick={() => setImage(null)}
+                className="absolute top-2 right-2 bg-black/70 px-2 py-1 rounded-md text-xs text-white"
+              >
+                Remove
+              </button>
             </div>
-          ))}
+          )}
+
+          <div className="flex items-center justify-between mt-4">
+            <label className="flex items-center gap-2 text-gray-400 cursor-pointer hover:text-white">
+              <ImagePlus size={20} />
+              <span>Add Image</span>
+              <input
+                type="file"
+                accept="image/*"
+                className="hidden"
+                onChange={handleImageChange}
+              />
+            </label>
+            <button
+              onClick={handlePost}
+              className="bg-blue-600 hover:bg-blue-700 cursor-pointer px-4 py-2 rounded-lg font-medium"
+            >
+              {editId ? "Update Post" : "Post"}
+            </button>
+          </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <button className="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 shadow-lg hover:shadow-xl">
-            Get Started Today
-          </button>
+        {/* Feed */}
+        <div className="space-y-6">
+          {posts.length === 0 ? (
+            <p className="text-gray-400 text-center mt-10">
+              No posts yet. Be the first to share something!
+            </p>
+          ) : (
+            posts.map((post) => (
+              <div
+                key={post.id}
+                className="bg-gray-900 border border-gray-800 rounded-2xl p-5 shadow-lg"
+              >
+                <div className="flex justify-between items-start">
+                  <p className="text-gray-300 whitespace-pre-line">
+                    {post.text}
+                  </p>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => handleEdit(post.id)}
+                      className="text-blue-400 hover:text-blue-600"
+                    >
+                      <Pencil size={18} />
+                    </button>
+                    <button
+                      onClick={() => handleDelete(post.id)}
+                      className="text-red-400 hover:text-red-600"
+                    >
+                      <Trash2 size={18} />
+                    </button>
+                  </div>
+                </div>
+
+                {post.image && (
+                  <img
+                    src={post.image}
+                    alt="Post"
+                    className="rounded-xl mt-4 max-h-72 object-cover w-full"
+                  />
+                )}
+
+                <p className="text-gray-500 text-sm mt-2">
+                  Posted on {post.date}
+                </p>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>
-  )
+  );
 }

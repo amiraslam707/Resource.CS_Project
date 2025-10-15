@@ -1,12 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
+import { useUser } from "@clerk/clerk-react";
 
 function Footer() {
+
+  const user = useUser()
+  
   return (
     <div className="w-full text-black flex flex-col items-center gap-10 py-10 px-4 sm:px-8 bg-[linear-gradient(to_left_bottom,#00d4ff,#0051ff)]">
       {/* Top Section */}
-      <div className="z-10 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 lg:gap-28 w-full max-w-6xl">
+      <div className="z-10 flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10 lg:gap-28 w-full max-w-6xl">
         {/* Logo + Text */}
         <div className="w-full lg:w-[290px] text-center lg:text-left">
           <NavLink to={"/"}>
@@ -23,48 +27,54 @@ function Footer() {
         </div>
 
         {/* Middle Links */}
-        <div className="flex flex-col gap-2 text-center lg:text-left">
+        {user && (<div className="flex flex-col gap-2 text-center lg:text-left">
           <NavLink
-            to={""}
+            to={"/career-paths"}
+            onClick={() => window.scrollTo(0,0)}
             className="text-black font-extrabold text-xl sm:text-2xl uppercase leading-[2.5rem] transition-all duration-300 ease-in-out hover:text-white"
           >
             CAREER PATHS
           </NavLink>
           <NavLink
-            to={""}
+            to={"/roadmaps"}
+            onClick={() => window.scrollTo(0,0)}
             className="text-black font-extrabold text-xl sm:text-2xl uppercase leading-[2.5rem] transition-all duration-300 ease-in-out hover:text-white"
           >
             ROADMAPS
           </NavLink>
           <NavLink
-            to={""}
+            to={"/resources"}
+            onClick={() => window.scrollTo(0,0)}
             className="text-black font-extrabold text-xl sm:text-2xl uppercase leading-[2.5rem] transition-all duration-300 ease-in-out hover:text-white"
           >
             RESOURCES
           </NavLink>
-        </div>
+        </div>)}
 
         {/* Right Links */}
-        <div className="flex flex-col gap-2 text-center lg:text-left">
+        {user && (<div className="flex flex-col gap-2 text-center lg:text-left">
           <NavLink
-            to={""}
+            to={"/tech-events"}
+            onClick={() => window.scrollTo(0,0)}
             className="text-black font-extrabold text-xl sm:text-2xl uppercase leading-[2.5rem] transition-all duration-300 ease-in-out hover:text-white"
           >
             TECH EVENTS
           </NavLink>
           <NavLink
-            to={""}
+            to={"/community"}
+            onClick={() => window.scrollTo(0,0)}
             className="text-black font-extrabold text-xl sm:text-2xl uppercase leading-[2.5rem] transition-all duration-300 ease-in-out hover:text-white"
           >
             COMMUNITY
           </NavLink>
           <NavLink
-            to={""}
+            to={"/contact"}
+            onClick={() => window.scrollTo(0,0)}
             className="text-black font-extrabold text-xl sm:text-2xl uppercase leading-[2.5rem] transition-all duration-300 ease-in-out hover:text-white"
           >
             CONTACT US
           </NavLink>
-        </div>
+        </div>)}
       </div>
 
       {/* Divider */}
@@ -72,7 +82,7 @@ function Footer() {
 
       {/* Bottom Line */}
       <div className="text-xs sm:text-sm font-medium text-center">
-        © 2025 Resource.CS. Made with ❤️ for CS Students.
+        © 2025 Resource.CS — All Rights Reserved.
       </div>
     </div>
   );

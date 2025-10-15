@@ -9,6 +9,8 @@ import Resources from './Components/Resources';
 import Community from './Components/Community';
 import Events from './Components/Events'
 import SingleCareer from './Components/SingleCareer';
+import SingleRoadmap from './Components/SingleRoadmap';
+import Contact from './Components/Contact';
 // import Navbar from './Components/Navbar';
 
 function App() {
@@ -20,7 +22,9 @@ function App() {
         <Route path='/career-paths' element={<CareerPaths />} />
         <Route path='/roadmaps' element={<Roadmaps />} />
         <Route path={`/career-path/:id`} element={<SingleCareer/>} />
+        <Route path={`/roadmap/:id`} element={<SingleRoadmap/>} />
         <Route path='/resources' element={<Resources />} />
+               <Route path='/contact' element={<Contact />} />
         <Route path='/tech-events' element={<Events />} />
         <Route path='/community' element={<Community />} />
       </Routes>

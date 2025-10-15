@@ -53,12 +53,14 @@ function Navbar() {
       {user && (
         <div className="nav hidden sm:flex items-center gap-3 sm:gap-12">
           <NavLink
+          onClick={() => window.scrollTo(0,0)}
             to={"/career-paths"}
             className="text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]"
           >
             CAREER PATHS
           </NavLink>
           <NavLink
+          onClick={() => window.scrollTo(0,0)}
             to={"/roadmaps"}
             className="text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]"
           >
@@ -66,12 +68,14 @@ function Navbar() {
           </NavLink>
           <NavLink
             to={"/resources"}
+            onClick={() => window.scrollTo(0,0)}
             className="text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]"
           >
             RESOURCES
           </NavLink>
           <NavLink
             to={"/tech-events"}
+            onClick={() => window.scrollTo(0,0)}
             className="text-white text-[1.1rem] transition-all ease-in-out hover:text-[#155dfc]"
           >
             TECH EVENTS

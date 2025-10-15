@@ -152,7 +152,7 @@ const SingleCareer = () => {
 };
 
     const id = parseInt(useParams().id)
-    const career = data[id];
+    const career = data[id]; 
     
   return career ? (
       <div className="bg-black text-white min-h-screen py-20 px-6 sm:px-16">
@@ -175,24 +175,21 @@ const SingleCareer = () => {
 
       {/* Roadmap & Resources Links */}
       <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center">
-        <a
-          href={career.roadmap}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link to={`/roadmap/${id}`}
+        onClick={() => window.scrollTo(0,0)}
           className="bg-[#155dfc] cursor-pointer hover:bg-[#00d4ff] hover:text-black text-white font-semibold py-3 px-6 rounded-xl transition ease-in-out duration-300 shadow-md"
         >
           View Roadmap
-        </a>
-        <a
-          href={career.resources}
-          target="_blank"
-          rel="noopener noreferrer"
+        </Link>
+        <Link to={'/resources'}
+        onClick={() => window.scrollTo(0,0)}
           className="bg-[#155dfc] hover:bg-[#00d4ff] cursor-pointer hover:text-black text-white font-semibold py-3 px-6 rounded-xl transition duration-300 shadow-md"
         >
           Learning Resources
-        </a>
+        </Link>
         <Link
           to="/career-paths"
+          onClick={() => window.scrollTo(0,0)}
           className="bg-transparent border border-gray-500 hover:bg-gray-800 text-gray-300 font-semibold py-3 px-6 rounded-xl transition duration-300"
         >
           ← Back to Careers

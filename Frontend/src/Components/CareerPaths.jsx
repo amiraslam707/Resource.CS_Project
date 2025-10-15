@@ -18,6 +18,7 @@ import road16 from '../assets/road16.jpg'
 import road144 from '../assets/road144.jpg'
 
 export default function CareerPaths() {
+  
   const [data] = useState([
     {
       id: 1,
@@ -127,7 +128,7 @@ export default function CareerPaths() {
         {data.map((path) => (
           <div
             key={path.id}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 p-4 hover:bg-blue-100 group hover:scale-105 hover:shadow-2xl"
+            className="bg-gray-900 border border-gray-700 rounded-2xl shadow-lg overflow-hidden transform transition duration-300 p-4 hover:bg-blue-900 group hover:scale-105 hover:shadow-2xl"
           >
             <img
               src={path.image}
@@ -135,10 +136,11 @@ export default function CareerPaths() {
               className="h-48 w-full rounded-xl object-cover"
             />
             <div className="p-6">
-              <h2 className="text-2xl font-bold group-hover:text-blue-700 text-gray-900">{path.title}</h2>
-              <p className="text-gray-600 mt-2">{path.shortDesc}</p>
+              <h2 className="text-2xl font-bold group-hover:text-blue-300 text-white">{path.title}</h2>
+              <p className="text-gray-600 group-hover:text-white mt-2">{path.shortDesc}</p>
               <Link
                 to={`/career-path/${path.id}`}
+                onClick={() => window.scrollTo(0,0)}
                 className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
               >
                 Learn More →

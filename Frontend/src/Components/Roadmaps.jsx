@@ -139,7 +139,8 @@ function Roadmaps() {
               <h2 className="text-2xl font-bold group-hover:text-blue-700 text-white">{path.title}</h2>
               <p className="text-white group-hover:text-gray-700 mt-2">{path.shortDesc}</p>
               <Link
-                to={`/career-path/${path.id}`}
+                to={`/roadmap/${path.id}`}
+                onClick={() => window.scrollTo(0,0)}
                 className="mt-4 inline-block text-white font-bold hover:text-[#155dfc] hover:scale-110 group-hover:text-gray-700 hover:translate-x-3 text-[35px] transition"
               >
                 →
