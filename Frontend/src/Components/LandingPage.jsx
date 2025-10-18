@@ -199,7 +199,7 @@ export default function LandingPage() {
                 id={`option${i+1}`}
                   key={i}
                   onClick={() => navigate("")}
-                  className="options ancr text-black bg-[#155dfc] h-[120px] sm:h-[150px] text-lg sm:text-xl md:text-2xl font-[900] w-[90%] sm:w-[300px] md:w-[350px] lg:w-[420px] flex justify-center items-center rounded-[20px] transition-all ease-in-out duration-700 hover:text-transparent cursor-pointer"
+                  className="options ancr text-black bg-[#155dfc] h-[120px] sm:h-[150px] text-lg sm:text-xl md:text-2xl font-[900] w-[90%] sm:w-[300px] md:w-[350px] lg:w-[420px] flex justify-center items-center rounded-[20px] transition-all ease-in-out duration-700 hover:text-transparent"
                 >
                   {opt}
                 </div>

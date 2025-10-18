@@ -5,7 +5,7 @@ import { useUser } from "@clerk/clerk-react";
 
 function Footer() {
 
-  const user = useUser()
+  const user = useUser();
   
   return (
     <div className="w-full text-black flex flex-col items-center gap-10 py-10 px-4 sm:px-8 bg-[linear-gradient(to_left_bottom,#00d4ff,#0051ff)]">
