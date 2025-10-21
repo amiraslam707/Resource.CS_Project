@@ -13,6 +13,7 @@ import SingleRoadmap from "./Components/SingleRoadmap";
 import Contact from "./Components/Contact";
 import AdminLogin from "./Components/AdminLogin";
 import AdminPanel from "./Components/AdminPanel";
+import LoginSignup from "./Components/LoginSignup";
 // import Navbar from './Components/Navbar';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/career-paths" element={<CareerPaths />} />
+        <Route path="/login" element={<LoginSignup />} />
         <Route path="/roadmaps" element={<Roadmaps />} />
         <Route path={`/career-path/:id`} element={<SingleCareer />} />
         <Route path={`/roadmap/:id`} element={<SingleRoadmap />} />

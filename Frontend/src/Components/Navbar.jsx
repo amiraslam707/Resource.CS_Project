@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../assets/logo.png";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { ArrowRight, Menu, X } from "lucide-react";
-import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
+// import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function Navbar() {
   const navigate = useNavigate();
-  const { user } = useUser();
-  const { openSignIn } = useClerk();
+  // const { user } = useUser();
+  // const { openSignIn } = useClerk();
 
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -50,7 +50,7 @@ function Navbar() {
       </div>
 
       {/* Desktop Links */}
-      {user && (
+      
         <div className="nav hidden sm:flex items-center gap-3 sm:gap-12">
           <NavLink
           onClick={() => window.scrollTo(0,0)}
@@ -88,45 +88,40 @@ function Navbar() {
             COMMUNITY
           </NavLink>
         </div>
-      )}
+    
 
       {/* Right side (desktop: user/auth, mobile: only menu) */}
       <div className="flex items-center gap-3">
         {/* Desktop Auth/User */}
         <div className="hidden sm:block">
-          {user ? (
-            <UserButton />
-          ) : (
-            <button
-              onClick={openSignIn}
+            <Link
+              to={'/login'}
               className="flex items-center gap-2 rounded-full text-sm cursor-pointer bg-[#155dfc] text-white px-10 py-2.5"
             >
               Get started <ArrowRight className="w-4 h-4" />
-            </button>
-          )}
+            </Link>
         </div>
 
         {/* Mobile menu toggle */}
-        {user && (
+        {/* {user && ( */}
           <button
             className="sm:hidden text-white"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? null : <Menu />}
           </button>
-        )}
-        {!user && (
-          <button
-            onClick={openSignIn}
+        {/* )} */}
+        {/* {!user && ( */}
+          <Link to={'/login'}
             className="sm:hidden flex items-center gap-2 rounded-full text-sm cursor-pointer bg-[#155dfc] text-white px-6 py-2"
           >
             Get started
-          </button>
-        )}
+          </Link>
+        {/* )} */}
       </div>
 
       {/* Sidebar for Mobile */}
-      {user && (
+      {/* {user && ( */}
         <div
           className={`fixed top-0 right-0 h-full w-64 bg-black transform ${
             menuOpen ? "translate-x-0" : "translate-x-full"
@@ -134,7 +129,7 @@ function Navbar() {
         >
           {/* Close Button + User at Top */}
           <div className="flex justify-between items-center p-4">
-            <UserButton />
+            {/* <UserButton /> */}
             <button onClick={() => setMenuOpen(false)} className="text-white">
               <X />
             </button>
@@ -179,7 +174,7 @@ function Navbar() {
             </NavLink>
           </div>
         </div>
-      )}
+      {/* )} */}
     </div>
   );
 }

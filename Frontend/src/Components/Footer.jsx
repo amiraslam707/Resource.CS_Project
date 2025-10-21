@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
-import { useUser } from "@clerk/clerk-react";
+// import { useUser } from "@clerk/clerk-react";
 
 function Footer() {
 
-  const user = useUser();
+  // const user = useUser();
   
   return (
     <div className="w-full text-black flex flex-col items-center gap-10 py-10 px-4 sm:px-8 bg-[linear-gradient(to_left_bottom,#00d4ff,#0051ff)]">
@@ -27,7 +27,7 @@ function Footer() {
         </div>
 
         {/* Middle Links */}
-        {user && (<div className="flex flex-col gap-2 text-center lg:text-left">
+        <div className="flex flex-col gap-2 text-center lg:text-left">
           <NavLink
             to={"/career-paths"}
             onClick={() => window.scrollTo(0,0)}
@@ -49,10 +49,10 @@ function Footer() {
           >
             RESOURCES
           </NavLink>
-        </div>)}
+        </div>
 
         {/* Right Links */}
-        {user && (<div className="flex flex-col gap-2 text-center lg:text-left">
+        <div className="flex flex-col gap-2 text-center lg:text-left">
           <NavLink
             to={"/tech-events"}
             onClick={() => window.scrollTo(0,0)}
@@ -74,7 +74,7 @@ function Footer() {
           >
             CONTACT US
           </NavLink>
-        </div>)}
+        </div>
       </div>
 
       {/* Divider */}
