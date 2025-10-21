@@ -69,7 +69,7 @@ const LoginSignup = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#155dfc] hover:bg-[#0e46c7] text-white font-semibold py-2 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_#155dfc]"
+            className="w-full bg-[#155dfc] hover:bg-[#0e46c7] text-white font-semibold py-2 rounded-lg transition-all duration-300 hover:shadow-[0_0_15px_#155dfc] cursor-pointer"
           >
             {isLogin ? "Login" : "Sign Up"}
           </button>
